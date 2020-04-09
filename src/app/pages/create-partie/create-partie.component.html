@@ -1,0 +1,144 @@
+<div class="container">
+    <h1>Création d'une partie</h1>
+    <hr>
+    <!-- Création du héro -->
+    <form [formGroup]="createHeroForm" (ngSubmit)="creerHero()">
+        <h3>Nom de la partie :</h3>
+        <div class="row">
+            <div class="col"></div>
+            <!--Nom de la partie -->
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nom de votre partie">
+            </div>
+            <!-- /Nom de la partie -->
+            <div class="col"></div>
+        </div>
+        <h3>Nom de votre héro :</h3>
+        <div class="row">
+            <div class="col"></div>
+            <!--Nom du héro -->
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Nom de votre héro" formControlName="nomHero">
+                <!-- Possible feature : Méthode pour générer un nom de héro -->
+            </div>
+            <!-- /Nom du héro -->
+            <div class="col"></div>
+        </div>
+        <h3>Choix de votre classe :</h3> <br>
+        <div class="row">
+            <!-- Choix de la classe et de l'arme -->
+            <!-- Guerrier -->
+            <img src="./assets/images/warrior_resize.png" alt="">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="classeHero" id="guerrierRadio" value="guerrier" (change)="afficherArme($event.target.value)" formControlName="classeHero">
+                    <label class="form-check-label" for="guerrierRadio">
+                  Guerrier 
+                </label>
+                </div>
+                <div *ngIf="guerrierChecked">
+                    <select class="form-control" formControlName="armeHero">
+                    <option>Choisissez votre arme</option>
+                    <option>Epee</option>
+                    <option>Masse</option>
+                </select>
+                </div>
+            </div>
+            <!-- /Guerrier -->
+            <!-- Soigneur -->
+            <img src="./assets/images/heal_resize.png" alt="">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="classeHero" id="soigneurrRadio" value="soigneur" (change)="afficherArme($event.target.value)" formControlName="classeHero">
+                    <label class="form-check-label" for="soigneurrRadio">
+                  Soigneur 
+                </label>
+                </div>
+                <div *ngIf="soigneurChecked">
+                    <select class="form-control" formControlName="armeHero">
+                        <option>Choisissez votre arme</option>
+                        <option>Epee</option>
+                        <option>Masse</option>
+                    </select>
+                </div>
+            </div>
+            <!-- /Soigneur -->
+            <!-- /Assassin -->
+            <img src="./assets/images/rogue_resize.png" alt="">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="classeHero" id="assassinRadio" value="assassin" (change)="afficherArme($event.target.value)" formControlName="classeHero">
+                    <label class="form-check-label" for="assassinRadio">
+                  Assassin 
+                </label>
+                </div>
+                <div *ngIf="assassinChecked">
+                    <select class="form-control" formControlName="armeHero">
+                    <option>Choisissez votre arme</option>
+                    <option>Dague</option>
+                    <option>Epee</option>
+                </select>
+                </div>
+            </div>
+            <!-- /Assassin -->
+            <!-- Archer -->
+            <img src="./assets/images/archer_resize.png" alt="">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="classeHero" id="archerRadio" value="archer" (change)="afficherArme($event.target.value)" formControlName="classeHero">
+                    <label class="form-check-label" for="archerRadio">
+                  Archer 
+                </label>
+                </div>
+                <div *ngIf="archerChecked">
+                    <select class="form-control" formControlName="armeHero">
+                        <option>Arc</option>
+                    </select>
+                </div>
+            </div>
+            <!-- /Archer -->
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Ajouter Héro</button>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div *ngIf="formSuccess">
+            <div class="alert alert-success" role="alert" id="sucessOrError">
+                Votre Héro a été ajouté avec succes !
+            </div>
+        </div>
+        <div *ngIf="formError">
+            <div class="alert alert-danger" role="alert" id="sucessOrError">
+                Le formulaire n'a pas été remplit correctement !
+            </div>
+        </div>
+    </form>
+    <!-- /Création du héro -->
+    <hr>
+    <!-- Tableau récapitulatif des héros crée -->
+    <h3>Vos héros :</h3> <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Classe</th>
+                <th scope="col">Arme</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let hero of listHero">
+                <th scope="row"></th>
+                <td>{{hero.nom}}</td>
+                <td>{{hero.classe}}</td>
+                <td>{{hero.arme}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+</div>

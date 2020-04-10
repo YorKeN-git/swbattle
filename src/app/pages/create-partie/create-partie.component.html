@@ -102,10 +102,15 @@
             <div class="col"></div>
             <div class="col"></div>
             <div class="col">
-                <button type="submit" class="btn btn-primary">Ajouter Héro</button>
+                <button type="submit" class="btn btn-primary">Add Héro (max 5 Héros)</button>
             </div>
             <div class="col"></div>
             <div class="col"></div>
+        </div>
+        <div *ngIf="formInfo">
+            <div class="alert alert-primary" role="alert" id="sucessOrError">
+                Nombre de Héro max atteind !
+            </div>
         </div>
         <div *ngIf="formSuccess">
             <div class="alert alert-success" role="alert" id="sucessOrError">
@@ -140,5 +145,19 @@
             </tr>
         </tbody>
     </table>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="combattre()">Combattre</button>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    <div *ngIf="pasDeHeroCreer">
+        <div class="alert alert-danger" role="alert" id="sucessOrError">
+            Tu dois au minimum créer 1 héro !
+        </div>
+    </div>
     <hr>
 </div>

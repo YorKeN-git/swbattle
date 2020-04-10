@@ -18,6 +18,10 @@ export class CreatePartieComponent implements OnInit {
   //Boolean pour afficher le message succes / error du form 
   formSuccess: boolean = false;
   formError: boolean = false;
+  formInfo: boolean = false;
+
+  //Boolean pour le message error 0 Héro créer
+  pasDeHeroCreer: boolean = false;
 
   //Mon formgroup
   createHeroForm: FormGroup;
@@ -69,6 +73,14 @@ export class CreatePartieComponent implements OnInit {
   }
 
   creerHero(){
+
+    if(this.listHero.length === 5){
+      //Nous limitons la création de héros a 5 
+      this.formInfo = true; 
+      this.formError = false;
+      this.formSuccess = false;
+      return;
+    }
     if(this.createHeroForm.valid){
       //afficher le message success
       this.formError = false;
@@ -97,6 +109,15 @@ export class CreatePartieComponent implements OnInit {
     this.hero.classe = classe;
     this.hero.arme = arme;
     this.listHero.push(this.hero);
+  }
+
+  combattre(){
+    if(this.listHero.length > 0){
+      this.pasDeHeroCreer = false;
+      //TODO lancer combat
+    }else{
+      this.pasDeHeroCreer = true;
+    }
   }
 
 }

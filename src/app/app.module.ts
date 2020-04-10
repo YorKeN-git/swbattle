@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreatePartieComponent } from './pages/create-partie/create-partie.component';
+import { SyntheseComponent } from './components/synthese/synthese.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CreatePartieComponent } from './pages/create-partie/create-partie.compo
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    CreatePartieComponent
+    CreatePartieComponent,
+    SyntheseComponent
   ],
   imports: [
     BrowserModule,

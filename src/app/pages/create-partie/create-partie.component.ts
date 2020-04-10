@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/modeles/hero';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-partie',
@@ -30,7 +31,8 @@ export class CreatePartieComponent implements OnInit {
   hero : Hero; 
   listHero : Hero[] = [];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private route: Router) { }
 
   ngOnInit() {
 
@@ -115,6 +117,7 @@ export class CreatePartieComponent implements OnInit {
     if(this.listHero.length > 0){
       this.pasDeHeroCreer = false;
       //TODO lancer combat
+      this.route.navigate(['/synthese']);
     }else{
       this.pasDeHeroCreer = true;
     }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/modeles/hero';
 import { Router } from '@angular/router';
+import { HeroServiceService } from 'src/app/services/hero-service.service';
 
 @Component({
   selector: 'app-create-partie',
@@ -32,7 +33,8 @@ export class CreatePartieComponent implements OnInit {
   listHero : Hero[] = [];
 
   constructor(private fb: FormBuilder,
-              private route: Router) { }
+              private route: Router,
+              private heroService: HeroServiceService) { }
 
   ngOnInit() {
 
@@ -116,7 +118,8 @@ export class CreatePartieComponent implements OnInit {
   combattre(){
     if(this.listHero.length > 0){
       this.pasDeHeroCreer = false;
-      //TODO lancer combat
+      //Envoi les héros créer à notre service
+      this.heroService.majListHero(this.listHero);
       this.route.navigate(['/synthese']);
     }else{
       this.pasDeHeroCreer = true;

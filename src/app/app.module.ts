@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CreatePartieComponent } from './pages/create-partie/create-partie.component';
 import { SyntheseComponent } from './components/synthese/synthese.component';
+import { SyntheseHeroComponent } from './components/synthese-hero/synthese-hero.component';
+import { SyntheseMonstreComponent } from './components/synthese-monstre/synthese-monstre.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SyntheseComponent } from './components/synthese/synthese.component';
     FooterComponent,
     HomeComponent,
     CreatePartieComponent,
-    SyntheseComponent
+    SyntheseComponent,
+    SyntheseHeroComponent,
+    SyntheseMonstreComponent
   ],
   imports: [
     BrowserModule,

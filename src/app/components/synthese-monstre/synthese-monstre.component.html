@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col" *ngFor="let monstre of monstreList">
+            <h5>{{monstre.nom}} <img src={{monstre.iconPath}} alt=""></h5>
+            <p><img src="./assets/images/icon_stat/hp.png" title="HP">{{monstre.hpMax}}</p>
+            <p><img src="./assets/images/icon_stat/def.png" title="DEF">{{monstre.def}}</p>
+            <p><img src="./assets/images/icon_stat/atk.jpg" title="ATK">{{monstre.atk}}</p>
+        </div>
+    </div>
+</div>

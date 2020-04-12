@@ -9,6 +9,7 @@ export class MonstreService {
   monstreList: Monstre[] = [];
   monstre: Monstre;
 
+  //Listes des nom Masculin
   listNomM: string[] = ['Glusor Atumag', 'Urbua Aguim', 'Lugdog Badbamph', 'Shuzothmuk Ugdgan', 'Dumagdush Ugdubag' //5
                         ,'Umuo Khasrump', 'Grogonak Buzgrat', 'Uruzgob Rugod', 'Yargol Moghgan', 'Magumok Marakul'  //10
                         ,'Khashnag Ugrugash', 'Bumur Grambuk', 'Urbbagorn Uftug', 'Dumok Brokham', 'Gadburz Gambag', //15
@@ -19,6 +20,8 @@ export class MonstreService {
                        'Bogrog Snazuf', 'Mahon Nolosh', 'Durul Orkgak', 'Olumrbash Shaknikh', 'Kofmorz Gulfuk', //40
                        'Maknbumol Murulfim', 'Garzrzob Lurkbog', 'Shurman Dulhnar', 'Shoo Urgbuk', 'Maknzol Ogdmba', //45
                        'Ugduothmuk Azobek', 'Dumug Marabak', 'Urzorn Borgakh', 'Lugfutto Bugarzuf', 'Groonk Glorrish',]; //50
+                       
+  //Listes des nom Féminin
   listNomF: string[] = ['Mogoga Ghothel','Ghobr Mashish','Bumphnakh Baroat','Volrzug Marabak','Graomalah Lumbrz',  //5
                         'Atudurz Borbrbush','Gaszob Gatuz','Batugar Ghart','Durzh Gholzag','Narur Maldush',  //10
                         'Uloakh Bonga','Umofim Snakh','Umoggash Coblbog','Shelr Bogaham','Ugakmpha Buronikh',  //15
@@ -60,6 +63,7 @@ export class MonstreService {
       this.monstre.nom = this.genererNomMonstreM();
       this.monstre.arme = "Masse";
       this.monstre.hpMax = 700;
+      this.monstre.hp = this.monstre.hpMax;
       this.monstre.def = 80;
       this.monstre.atk = 100;
       this.monstre.iconPath = "./assets/images/icon_monstre/monstre1.jpg";
@@ -70,6 +74,7 @@ export class MonstreService {
       this.monstre.nom = this.genererNomMonstreM();
       this.monstre.arme = "Masse";
       this.monstre.hpMax = 800;
+      this.monstre.hp = this.monstre.hpMax;
       this.monstre.def = 100;
       this.monstre.atk = 150;
       this.monstre.iconPath = "./assets/images/icon_monstre/monstre2.jpg";
@@ -80,6 +85,7 @@ export class MonstreService {
       this.monstre.nom = this.genererNomMonstreM();
       this.monstre.arme = "Epee";
       this.monstre.hpMax = 800;
+      this.monstre.hp = this.monstre.hpMax;
       this.monstre.def = 70;
       this.monstre.atk = 150;
       this.monstre.iconPath = "./assets/images/icon_monstre/monstre3.jpg";
@@ -90,6 +96,7 @@ export class MonstreService {
       this.monstre.nom = this.genererNomMonstreF();
       this.monstre.arme = "Dague";
       this.monstre.hpMax = 500;
+      this.monstre.hp = this.monstre.hpMax;
       this.monstre.def = 50;
       this.monstre.atk = 200;
       this.monstre.iconPath = "./assets/images/icon_monstre/monstre4.jpg";
@@ -100,6 +107,7 @@ export class MonstreService {
       this.monstre.nom = this.genererNomMonstreM();
       this.monstre.arme = "Masse";
       this.monstre.hpMax = 1200;
+      this.monstre.hp = this.monstre.hpMax;
       this.monstre.def = 200;
       this.monstre.atk = 300;
       this.monstre.iconPath = "./assets/images/icon_boss/boss.jpg";

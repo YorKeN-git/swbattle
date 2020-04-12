@@ -10,6 +10,8 @@ import { CreatePartieComponent } from './pages/create-partie/create-partie.compo
 import { SyntheseComponent } from './components/synthese/synthese.component';
 import { SyntheseHeroComponent } from './components/synthese-hero/synthese-hero.component';
 import { SyntheseMonstreComponent } from './components/synthese-monstre/synthese-monstre.component';
+import { LancerPartieComponent } from './components/lancer-partie/lancer-partie.component';
+import { CombatComponent } from './pages/combat/combat.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SyntheseMonstreComponent } from './components/synthese-monstre/synthese
     CreatePartieComponent,
     SyntheseComponent,
     SyntheseHeroComponent,
-    SyntheseMonstreComponent
+    SyntheseMonstreComponent,
+    LancerPartieComponent,
+    CombatComponent
   ],
   imports: [
     BrowserModule,

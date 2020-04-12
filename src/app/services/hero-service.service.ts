@@ -25,18 +25,21 @@ export class HeroServiceService {
       switch (listHero[index].classe) {
         case 'guerrier':
           listHero[index].hpMax = 800;
+          listHero[index].hp = listHero[index].hpMax;
           listHero[index].def = 200;
           listHero[index].atk = 100;
           listHero[index].pathIcon = "./assets/images/icon_classe/guerrier.jpg";
           break;
         case 'soigneur':
           listHero[index].hpMax = 600;
+          listHero[index].hp = listHero[index].hpMax;
           listHero[index].def = 50;
           listHero[index].atk = 50;
           listHero[index].pathIcon = "./assets/images/icon_classe/priest.jpg";
           break;
         case 'assassin':
           listHero[index].hpMax = 600;
+          listHero[index].hp = listHero[index].hpMax;
           listHero[index].def = 50;
           listHero[index].atk = 300;
           listHero[index].pathIcon = "./assets/images/icon_classe/assassin.jpg"
@@ -44,6 +47,7 @@ export class HeroServiceService {
 
         case 'archer':
           listHero[index].hpMax = 700;
+          listHero[index].hp = listHero[index].hpMax;
           listHero[index].def = 50;
           listHero[index].atk = 200;
           listHero[index].pathIcon = "./assets/images/icon_classe/archer.jpg"

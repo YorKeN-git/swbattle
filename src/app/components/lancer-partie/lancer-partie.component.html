@@ -1,0 +1,54 @@
+<div class="container">
+    <h2> Tout est prêt ! </h2>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+            <button type="button" class="btn btn-primary" (click)="lancerCombat()" [disabled]="submitRand">Démarrer le combat</button>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+    <div class="alert alert-success" role="alert" id="rand" *ngIf="herosCommencent">
+        Rand {{rand}} ! Les Héros commencent !
+    </div>
+    <div class="alert alert-danger" role="alert" id="rand" *ngIf="monstresCommencent">
+        Rand {{rand}} ! Les Monstres commencent !
+    </div>
+    <div class="row" *ngIf="submitRand">
+        <!-- Mes héros -->
+        <div class="col">
+            <h6> Mes héros </h6>
+            <div *ngFor="let hero of herosList">
+                <img src={{hero.pathIcon}} alt="" srcset="" class="personnage"> {{hero.nom}}
+                <div class="progress">
+                    <img src="./assets/images/icon_stat/hp.png" alt="" srcset="" class="hpIcon">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{hero.hp}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- /Mes héros -->
+        <!-- Mon panel  -->
+        <div class="col">
+            <h6> Récapitulatif du combat : </h6>
+            <textarea class="form-control" name="" id="" cols="50" rows="10">mon text{{rapportCombat}}</textarea>
+            <button type="button" class="btn btn-primary" (click)="attaquer()">Commencer manche {{nbManche}}</button>
+            <button type="button" class="btn btn-danger">Abandonner le combat</button>
+        </div>
+        <!-- /Mon panel -->
+        <!-- Mes monstres-->
+        <div class="col">
+            <h6>Les monstres</h6>
+            <div *ngFor="let monstre of monstresList">
+                <img src={{monstre.iconPath}} alt="" srcset="" class="personnage"> {{monstre.nom}}
+                <div class="progress">
+                    <img src="./assets/images/icon_stat/hp.png" alt="" srcset="" class="hpIcon">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{monstre.hp}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- /Mes monstres -->
+    </div>
+    <!--Fin component-->
+    <hr>
+</div>

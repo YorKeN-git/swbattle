@@ -9,6 +9,24 @@ export class MonstreService {
   monstreList: Monstre[] = [];
   monstre: Monstre;
 
+  listNomM: string[] = ['Glusor Atumag', 'Urbua Aguim', 'Lugdog Badbamph', 'Shuzothmuk Ugdgan', 'Dumagdush Ugdubag' //5
+                        ,'Umuo Khasrump', 'Grogonak Buzgrat', 'Uruzgob Rugod', 'Yargol Moghgan', 'Magumok Marakul'  //10
+                        ,'Khashnag Ugrugash', 'Bumur Grambuk', 'Urbbagorn Uftug', 'Dumok Brokham', 'Gadburz Gambag', //15
+                       'Garo Buzgorn', 'Bagron Durgg', 'Olfgnak Ruspok', 'Mukr Gorzdu', 'Umuh Agamrag', //20
+                       'Othmagdush Loghrba', 'Malknarz Snagh', 'Duraamul Gharhakh', 'Magugakh Lagda', 'Urbamph Mogarkub', //25
+                       'Yasolg Durggdub', 'Shelamul Muzgorn', 'Balgrol Agubul', 'Ogolob Mularbag', 'Oluagorn Ulfirag', //30
+                       'Olpao Bhagamph', 'Nasrol Shatamph', 'Brubagorn Mogdrg', 'Dumish Borblam', 'Ghorrkul Magrkul', //35
+                       'Bogrog Snazuf', 'Mahon Nolosh', 'Durul Orkgak', 'Olumrbash Shaknikh', 'Kofmorz Gulfuk', //40
+                       'Maknbumol Murulfim', 'Garzrzob Lurkbog', 'Shurman Dulhnar', 'Shoo Urgbuk', 'Maknzol Ogdmba', //45
+                       'Ugduothmuk Azobek', 'Dumug Marabak', 'Urzorn Borgakh', 'Lugfutto Bugarzuf', 'Groonk Glorrish',]; //50
+  listNomF: string[] = ['Mogoga Ghothel','Ghobr Mashish','Bumphnakh Baroat','Volrzug Marabak','Graomalah Lumbrz',  //5
+                        'Atudurz Borbrbush','Gaszob Gatuz','Batugar Ghart','Durzh Gholzag','Narur Maldush',  //10
+                        'Uloakh Bonga','Umofim Snakh','Umoggash Coblbog','Shelr Bogaham','Ugakmpha Buronikh',  //15
+                        'Gulfat Dugrg','Ushgak Atulug','Borfish Glukimph','Morba Agarzog','Borim Bagoshnar',  //20
+                        'Basha Ulfak','Gulfurash Ghohug','Grazgash Skanhol','Sherz Bagotur','Lambha Rimprol',  //25
+                        'Voltbug Gramag','Ghobn Brokdum','Lambamph Bumgham','Ulothnakh Orkuarn','Baghnakh Nolbek',  //30
+                        'Urzotharz Mulaul','Shusha Aglgamph','Narrza Bagurak','Baturak Glukrak','Mora Usharku',  //35
+                        'Mogalur Burou','Bashm Masoth','Gratdurash Loghgakh','Uglarz Durhug','Khaftharz Galump',]  //40
   constructor() { }
 
   genererListMonstre(){
@@ -90,12 +108,15 @@ export class MonstreService {
   }
 
   genererNomMonstreM(){
-    //WIP Generer nom M
-    return "NomM"
+    let value = Math.floor(Math.random() * Math.floor(49));
+    let nomM = this.listNomM[value];
+    return nomM;
   }
 
   genererNomMonstreF(){
     //WIP Generer nom F
-    return "nomF"
+    let value = Math.floor(Math.random() * Math.floor(39));
+    let nomF = this.listNomF[value];
+    return nomF;
   }
 }

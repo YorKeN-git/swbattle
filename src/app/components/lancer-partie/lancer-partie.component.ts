@@ -25,7 +25,9 @@ export class LancerPartieComponent implements OnInit {
   monstresList: Monstre[];
 
   nbManche: number = 1;
-  rapportCombat: string[] = ["Je suis dezopfkpofkpeorkf"];
+  rapportCombat: string[] = ["---- Bienvenue dans StormWind Battle ----\n\r"];
+  manche: string = "---- Bienvenue dans StormWind Battle ----\n\r"; 
+
 
   constructor(private partieService: PartieService) { }
 
@@ -52,7 +54,11 @@ export class LancerPartieComponent implements OnInit {
   }
 
   attaquer(){
-    this.rapportCombat.push("---- Début de la manche "+ this.nbManche + " ----");
+    //Fait appel à notre service 
+    //WIP
+    this.manche = "---- Début de la manche " + this.nbManche + " ---- \n\r";
+    //Enregistre notre combat dans une list (possible feature)
+    this.rapportCombat.push(this.manche);
     this.nbManche++;
     console.log(this.rapportCombat);
   }

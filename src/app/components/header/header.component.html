@@ -11,10 +11,16 @@
     <!-- NavBar -->
     <div class="row">
         <div class="col">
-            Acceuil
+            <button type="button" class="btn btn-link" [routerLink]="['/home']" routerLinkActive="router-link-active">Acceuil</button>
         </div>
         <div class="col">
-            FAQ
+            <button type="button" class="btn btn-link" [routerLink]="['/faq']" routerLinkActive="router-link-active">FAQ</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-link" [routerLink]="['/simulateur']" routerLinkActive="router-link-active">Simulateur d'attaque</button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-link" [routerLink]="['/release-Note']" routerLinkActive="router-link-active">Information Mise à jour</button>
         </div>
     </div>
     <hr>

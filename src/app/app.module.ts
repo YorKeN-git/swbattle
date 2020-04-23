@@ -12,6 +12,12 @@ import { SyntheseHeroComponent } from './components/synthese-hero/synthese-hero.
 import { SyntheseMonstreComponent } from './components/synthese-monstre/synthese-monstre.component';
 import { LancerPartieComponent } from './components/lancer-partie/lancer-partie.component';
 import { CombatComponent } from './pages/combat/combat.component';
+import { SimulateurComponent } from './pages/simulateur/simulateur.component';
+import { ReleaseNoteComponent } from './pages/release-note/release-note.component';
+import { FaqComponent } from './pages/faq/faq.component';
+import { PatchNoteComponent } from './components/patch-note/patch-note.component';
+import { InformationJeuComponent } from './components/information-jeu/information-jeu.component';
+import { SimulationAttaqueComponent } from './components/simulation-attaque/simulation-attaque.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { CombatComponent } from './pages/combat/combat.component';
     SyntheseHeroComponent,
     SyntheseMonstreComponent,
     LancerPartieComponent,
-    CombatComponent
+    CombatComponent,
+    SimulateurComponent,
+    ReleaseNoteComponent,
+    FaqComponent,
+    PatchNoteComponent,
+    InformationJeuComponent,
+    SimulationAttaqueComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PartieService } from 'src/app/services/partie.service';
 import { Hero } from 'src/app/modeles/hero';
 import { Monstre } from 'src/app/modeles/monstre';
+import { Partie } from 'src/app/modeles/partie';
 
 @Component({
   selector: 'app-lancer-partie',
@@ -28,6 +29,7 @@ export class LancerPartieComponent implements OnInit {
   rapportCombat: string[] = ["---- Bienvenue dans StormWind Battle ----\n\r"];
   manche: string = "---- Bienvenue dans StormWind Battle ----\n\r"; 
 
+  partie: Partie;
 
   constructor(private partieService: PartieService) { }
 
@@ -56,6 +58,11 @@ export class LancerPartieComponent implements OnInit {
   attaquer(){
     //Fait appel à notre service 
     //WIP
+    this.partie = new Partie();
+    this.partie.heroList = this.herosList;
+    this.partie.monstreList = this.monstresList;
+    this.partie.nbManche = this.nbManche;
+    this.partieService.attaquer(this.partie, this.rand);
     this.manche = "---- Début de la manche " + this.nbManche + " ---- \n\r";
     //Enregistre notre combat dans une list (possible feature)
     this.rapportCombat.push(this.manche);

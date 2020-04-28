@@ -1,7 +1,41 @@
 <div class="container">
     <h2>Simulateur d'attaque</h2>
     <div class="row">
-        WIP simulateur
+        <p>Ici, vous pouvez tester les différentes classes disponible.</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select class="custom-select" id="inputSelectClasse" (change)="entrainementChoixClasse($event.target.value)">
+            <option selected>Choisissez votre classe...</option>
+            <option value="guerrier">Guerrier</option>
+            <option value="soigneur">Soigneur</option>
+            <option value="assassin">Assassin</option>
+            <option value="archer">Archer</option>
+            </select>
+        </div>
+        <div class="col" *ngIf="choixClasseFait">
+            <select class="custom-select" id="inputArme" (change)="entrainementChoixArme()">
+                <option selected>Choisissez votre arme...</option>
+                <option value="epee" *ngIf="epee">Epee</option>
+                <option value="masse" *ngIf="masse">Masse</option>
+                <option value="dague" *ngIf="dague">Dague</option>
+                <option value="arc" *ngIf="arc">Arc</option>
+            </select>
+        </div>
+        <div class="col" *ngIf="choixArmeFait">
+            <select class="custom-select" id="inputMonstre">
+                <option selected>Choisissez votre adversaire...</option>
+                <option value="monstreUn">Monstre 1</option>
+                <option value="monstreDeux">Monstre 2</option>
+                <option value="monstreTrois">Monstre 3</option>
+                <option value="monstreQuatre">Monstre 4</option>
+                <option value="boss">Boss</option>
+            </select>
+        </div>
+        <button type="" class="btn btn-primary">Lancer l'entrainement</button>
+    </div>
+    <div class="row">
+        WIP COMBAT D'ENTRAINEMENT
     </div>
     <hr>
 </div>

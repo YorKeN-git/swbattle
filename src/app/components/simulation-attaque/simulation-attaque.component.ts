@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EntrainementService } from 'src/app/services/entrainement.service';
 
 @Component({
   selector: 'app-simulation-attaque',
@@ -15,9 +17,19 @@ export class SimulationAttaqueComponent implements OnInit {
   dague: boolean = false;
   arc: boolean = false;
 
-  constructor() { }
+  //FormGroup
+  entrainementForm: FormGroup;
+  errorForm: boolean = false;
+
+  constructor(private fb: FormBuilder,
+              private entrainementService: EntrainementService) { }
 
   ngOnInit() {
+    this.entrainementForm = this.fb.group({
+      classe: ['', Validators.required],
+      arme: ['', Validators.required],
+      monstre: ['', Validators.required]
+    });
   }
 
   entrainementChoixClasse(choixClasse: string){
@@ -55,6 +67,24 @@ export class SimulationAttaqueComponent implements OnInit {
 
   entrainementChoixArme(){
     this.choixArmeFait = true;
+  }
+
+  creerEntrainement(){
+    if(this.entrainementForm.invalid){
+      //formulaire invalide, affiche un message d'erreur.
+      this.errorForm = true; 
+      return;
+    }else{
+      //Retire le message d'erreur. 
+      this.errorForm = false; 
+      //Récuperd les données du form 
+      let classe = this.entrainementForm.get('classe').value;
+      let arme = this.entrainementForm.get('arme').value;
+      let monstre = this.entrainementForm.get('monstre').value;
+      console.log(classe + ' ' + arme + ' ' + monstre);
+
+      //Créer la partie d'entrainement 
+    }
   }
 
 }
